@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ToDoItem(props) {
-  const [hasLineThrough, setLineThrough] = useState(false);
+  //const [hasLineThrough, setLineThrough] = useState(false);
 
-  function crossOutItem() {
-    setLineThrough((prevValue) => {
-      return !prevValue;
-    });
-  }
+  // function crossOutItem() {
+  //   setLineThrough((prevValue) => {
+  //     return !prevValue;
+  //   });
+  // }
+
   return (
     <li
-      style={{
-        textDecoration: hasLineThrough ? "line-through" : "none"
+      onClick={() => {
+        props.onChecked(props.id);
       }}
-      onClick={crossOutItem}
     >
       {props.item}
     </li>
